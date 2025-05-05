@@ -46,7 +46,7 @@ jobs:
       id: check 
       run: |
         echo ${{ env.ACCOUNT_ID }}
-        aws s3api head-object --bucket do-not-delete-awsgoat-state-files-${{ env.ACCOUNT_ID }} --key terraform.tfstate
+        aws s3api head-object --bucket do-not-delete-awsgoat-state-files-$ACCOUNT_ID --key terraform.tfstate
       continue-on-error: true
 
     - name: Exit if previous deployment exists
